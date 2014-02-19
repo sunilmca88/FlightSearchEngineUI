@@ -1,0 +1,160 @@
+{
+    "flight": {
+        "from": {
+            "DEL": [
+                {
+                    "to": "PNQ",
+                    "deptime": "10:00AM",
+                    "depdate": "01/01/2014",
+                    "arrtime": "12:00PM",
+                    "arrdate": "01/01/2014",
+                    "flight": "Air India",
+                    "fc": "AI",
+                    "fn": "202",
+                    "afare": "3000",
+                    "cfare": "1500",
+                    "ifare": "0"
+                },
+				 {
+                    "to": "LJN",
+                    "deptime": "12:00AM",
+                    "depdate": "01/01/2014",
+                    "arrtime": "02:00AM",
+                    "arrdate": "02/01/2014",
+                    "flight": "Jet Airways",
+                    "fc": "JA",
+                    "fn": "302",
+                    "afare": "3000",
+                    "cfare": "1500",
+                    "ifare": "0"
+                },
+                {
+                    "to": "PNQ",
+                    "deptime": "12:00AM",
+                    "depdate": "01/01/2014",
+                    "arrtime": "02:00AM",
+                    "arrdate": "02/01/2014",
+                    "flight": "Jet Airways",
+                    "fc": "JA",
+                    "fn": "302",
+                    "afare": "2500",
+                    "cfare": "1700",
+                    "ifare": "0"
+                },
+                {
+                    "to": "PNQ",
+                    "deptime": "02:00PM",
+                    "depdate": "01/01/2014",
+                    "arrtime": "04:00AM",
+                    "arrdate": "02/01/2014",
+                    "flight": "Spice Jet",
+                    "fc": "SJ",
+                    "fn": "402",
+                    "afare": "1800",
+                    "cfare": "1400",
+                    "ifare": "0"
+                }
+            ],
+            "PNQ": [
+                {
+                    "to": "DEL",
+                    "deptime": "10:00AM",
+                    "depdate": "01/01/2014",
+                    "arrtime": "12:00PM",
+                    "arrdate": "01/01/2014",
+                    "flight": "Air India",
+                    "fc": "AI",
+                    "fn": "202",
+                    "afare": "1900",
+                    "cfare": "1200",
+                    "ifare": "0"
+                },
+                {
+                    "to": "LJN",
+                    "deptime": "12:00AM",
+                    "depdate": "01/01/2014",
+                    "arrtime": "02:00AM",
+                    "arrdate": "02/01/2014",
+                    "flight": "Jet Airways",
+                    "fc": "JA",
+                    "fn": "302",
+                    "afare": "1500",
+                    "cfare": "780",
+                    "ifare": "0"
+                },
+                {
+                    "to": "DEL",
+                    "deptime": "02:00PM",
+                    "depdate": "01/01/2014",
+                    "arrtime": "04:00AM",
+                    "arrdate": "02/01/2014",
+                    "flight": "Spice Jet",
+                    "fc": "SJ",
+                    "fn": "402",
+                    "afare": "1850",
+                    "cfare": "1450",
+                    "ifare": "0"
+                }
+            ],
+			 "LJN": [
+                {
+                    "to": "DEL",
+                    "deptime": "10:00AM",
+                    "depdate": "01/01/2014",
+                    "arrtime": "12:00PM",
+                    "arrdate": "01/01/2014",
+                    "flight": "Air India",
+                    "fc": "AI",
+                    "fn": "202",
+                    "afare": "950",
+                    "cfare": "500",
+                    "ifare": "0"
+                },
+                {
+                    "to": "PNQ",
+                    "deptime": "12:00AM",
+                    "depdate": "01/01/2014",
+                    "arrtime": "02:00AM",
+                    "arrdate": "02/01/2014",
+                    "flight": "Jet Airways",
+                    "fc": "JA",
+                    "fn": "302",
+                    "afare": "4500",
+                    "cfare": "1500",
+                    "ifare": "0"
+                },
+                {
+                    "to": "MAA",
+                    "deptime": "02:00PM",
+                    "depdate": "01/01/2014",
+                    "arrtime": "04:00AM",
+                    "arrdate": "02/01/2014",
+                    "flight": "Spice Jet",
+                    "fc": "SJ",
+                    "fn": "402",
+                    "afare": "850",
+                    "cfare": "450",
+                    "ifare": "0"
+                }
+            ]
+        },
+        "ap": [
+            {
+                "city": "New Delhi",
+                "name": "Indira Gandhi Airport",
+				"code":"DEL"
+            },
+            {
+                "city": "Pune",
+                "name": "Lohegaon",
+				"code":"PNQ"
+            },
+			{
+                "city": "Lucknow",
+                "name": "test",
+				"code":"LJN"
+            }
+			
+        ]
+    }
+}

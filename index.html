@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flight search engine</title>
+	<!-- Included Bootstrap CSS Files -->
+	<link rel="stylesheet" href="./js/bootstrap/css/bootstrap.min.css" />
+	
+    <!-- Font Include -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,100italic,300italic,500,700' rel='stylesheet' type='text/css'>
+
+	<!-- Website CSS Theme Css -->	
+	<link rel="stylesheet" href="./css/stylesheet.css" />
+    <link rel="stylesheet" href="./css/jquery-ui-1.10.3.custom.min.css">
+     
+</head>
+<body>
+<!-- opening tag of outercontent section -->
+    <div class="content" id="outercontent">
+    <!-- opening tag of innercontent section -->
+        <div class="container theme" id="innercontent">
+        
+            <!-- Opening of Header -->
+            <div class="row" id="row1">
+                <div class="span12" id="header">
+                    <h1><span>Flight Search Engine</span></h1>
+                </div>
+            </div>
+            <!-- /closing of Header -->   
+          
+            <div class="row" id="row2">
+				<!-- Search Criteria form starts here -->
+                <div class="span4">
+                    <h2 class="center purple white">Plan My Wings</h2>
+                   	<!--tripSearch div start here -->                    
+                    <div id="tripSearch">
+                    	<!--tabs div start here -->                    	
+                        <div id="tabs">
+                            <ul>
+                                <li><a href="#oneWay">One way</a></li>
+                                <li><a href="#return">Return</a></li>
+                            </ul>
+							<!-- oneWay trip tab starts here -->
+                            <div id="oneWay">
+                                <div class="ui-widget">
+                                    <input type="text" id="srcCity" placeholder="Enter Origin City">
+                                </div>
+                                <div class="ui-widget">
+                                    <input type="text" id="destCity" placeholder="Enter Destination City">
+                                </div>
+                                <input type="text" id="oneWayFrom" name="oneWayFrom" placeholder="Departure Date" value="">
+                                <br>Adult(12+ yrs)                           
+                                <select id="oneWayAdultCount">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select> 
+                                <br>Child(2-12 yrs)                           
+                                <select id="oneWayChildCount">
+                                    <option value="0">0</option>                             
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>                           
+                                </select>                              
+                                <br>Infant(0-2 yrs)                           
+                                <select id = "oneWayInfantCount">
+                                    <option value="0">0</option>                             
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>                         
+                                </select> 
+                                <br>                            
+                                <button class="btn-theme-small" id="oneWaySearch" onClick="getFlightDetail('oneWay');">Search</button> 						
+                            </div>
+                            <!-- oneWay trip tab starts here -->
+                            
+                          	<!-- return trip tab starts here -->
+                            <div id="return">
+                                <div class="ui-widget">
+                                    <input type="text" id="retSrcCity" placeholder="Enter Origin City" value="">
+                                </div>
+                                <div class="ui-widget">
+                                    <input type="text" id="retDestCity" placeholder="Enter Destination City" value=""><br>
+                                </div>
+                                <input type="text" id="returnFrom" name="returnFrom" placeholder="Departure Date" value="">
+                                <input type="text" id="to" name="to" placeholder="Return Date" value="">
+                                <br>Adult(12+ yrs)                           
+                                <select id="retAdultCount">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>                             
+                                </select>                                
+                                <br>Child(2-12 yrs)                           
+                                <select id="retChildCount">
+                                    <option value="0">0</option>                             
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>                          
+                                </select> 
+                                 
+                                <br>Infant(0-2 yrs)                           
+                                <select id="retInfantCount">
+                                    <option value="0">0</option>                             
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>                         
+                                </select> 
+                                <br>                            
+                                <button class="btn-theme-small"  id="returnSearch" onClick="getFlightDetail('roundTrip');">Search</button> 						
+                            </div>    
+							<!-- return trip tab ends here -->                
+                        </div>
+                    	<!--tabs div ends here -->                        
+                    </div>
+                   	<!--tripSearch div ends here -->                                        
+                    
+    				<!--Refine search slider starts here-->
+                    <div>
+                        <h2 class="center purple white">Refine Search</h2>
+                        <p>
+                            <label for="amount" class="pull-left">Ticket Price range:</label>&nbsp;
+                            <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" readonly>
+                        </p>
+                        <div id="slider-range"></div>
+                    </div>
+					<!--Refine search slider ends here-->
+                </div>
+            	<!-- /Search Criteria form Ends here -->
+            
+            <!-- Search Result Display Area starts here -->            
+                <div class="span8">
+                    <h2 class="center pink white">Available Flights</h2>
+                    <div class="span5" style="margin-left:5px;" >
+                        <h3 class="nobg" id="journeyRoute"><!--Pune > Delhi > Pune--></h3> 
+                    </div>
+                    <div class="span2 pull-right" >                                 
+                        <p id="departDate"></p>
+                        <p id="returnDate"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <!--searchResult column starts here-->   
+                    <!-- this is the HTML template -->
+					<script type="text/html" id="template">
+						{{#key}}
+						{{#dest}}
+                     	<div class="well" id="flights" data-price = {{afare}}>
+                            <h2 class="nobg" name="fare">Rs.{{afare}}.00</h2>                                  
+                            <div class="span3" style="margin-left:0;">
+                                <p>
+                                    {{fc}}-{{fn}}<br>
+                                    <strong>{{from}} > {{to}}</strong>
+                                    <br>
+                                    <strong>Departs :</strong> {{deptime}}
+                                    <br>
+                                    <strong>Arrives :</strong> {{arrtime}}
+                                </p>
+                            </div>               
+                            <div class="span3" style="margin-left:0;">
+							{{#ret}}
+                                <p> 
+                                    {{fc}}-{{fn}}<br>
+                                    <strong>{{to}} > {{from}}</strong>
+                                    <br>
+                                    <strong>Departs :</strong> {{deptime}}
+                                    <br>
+                                    <strong>Arrives :</strong> {{arrtime}}
+                                </p>
+							{{/ret}}
+                            </div>   
+                            <div class="span2 clearfix" style="margin-left:0;">
+                                <!--<img src="" alt="Air india">-->
+                                <a class="btn-theme green" href="#">Book this flight</a>
+                            </div>  
+                            <div class="clearfix"></div>
+                        </div>
+						{{/dest}}
+						{{/key}}
+					
+					</script>
+         
+                    <div class="span8" id="searchResult">
+                   		<div class="well">
+                            <h1 class="nobg">Welcome Guest!</h1> 
+                            <h3 class="nobg">Plan Your travel</h3> 
+                        </div>
+                    </div>
+                    <!--searchResult column Ends here-->           
+            	</div>
+			</div>
+        </div>
+       <!-- closing tag of innercontent section -->
+    </div>
+<!-- closing tag of outercontent section -->
+   
+    
+<!--Call to external script files -->
+<script src="./js/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="./js/bootstrap/js/bootstrap.min.js"></script>
+<script src="./js/script.js"></script>
+<script src="./js/mustache.js"></script>
+<script src="./js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="./js/customScript.js" type="text/javascript"></script>
+<script>
+var elem = document.getElementsByTagName("div");
+document.getElementById("id").style.border = "10px";
+</script>
+
+
+</body>
+</html>
